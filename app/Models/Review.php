@@ -18,6 +18,16 @@ class Review extends Model
         'status',
         'viewed',
     ];
-    
+
+    // one product many reviews
+    public function product() {
+        return $this->belongsTo(Product::class);
+    }
+
+    // one user many reviews
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
 
 }

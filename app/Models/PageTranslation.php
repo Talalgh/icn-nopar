@@ -17,5 +17,10 @@ class PageTranslation extends Model
         'lang',
     ];
 
+    // one page many page_translations
+    public function pages() {
+        return $this->belongsTo(Page::class);
+    }
+
 
 }

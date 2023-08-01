@@ -20,4 +20,9 @@ class PaykuTransaction extends Model
         'notified_at',
     ];
 
+    // one payku_transaction one order
+    public function orders() {
+        return $this->belongsTo(Order::class);
+    }
+
 }

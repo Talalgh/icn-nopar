@@ -25,4 +25,10 @@ class ProductTranslation extends Model
         'lang',
     ];
 
+    // one product many product_translation
+    public function products() {
+        return $this->belongsTo(Product::class);
+    }
+
+
 }

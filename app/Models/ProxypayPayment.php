@@ -18,4 +18,20 @@ class ProxypayPayment extends Model
         'amount',
     ];
 
+    // one proxypay to many order
+    public function orders() {
+        return $this->belongsTo(Order::class);
+    }
+
+
+    // one proxypay many package
+    public function packages(){
+        return $this->belongsToMany(Package::class);
+    }
+
+    // one user many proxypay
+    public function users() {
+        return $this->belongsTo(User::class);
+    }
+
 }

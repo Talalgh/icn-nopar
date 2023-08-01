@@ -15,4 +15,10 @@ class PaymentPage extends Model
         'position',
     ];
 
+    // relation with PaymentPageTranslation table
+    public function paymentPageTranslations()
+    {
+        return $this->hasMany(PaymentPageTranslation::class);
+    }
+
 }

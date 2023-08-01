@@ -16,4 +16,14 @@ class Message extends Model
         'message'
     ];
 
+    // one conversation to many messages
+    public function conversations() {
+        return $this->belongsTo(Conversation::class);
+    }
+
+    // one user many messages
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
+
 }

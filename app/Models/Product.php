@@ -94,4 +94,61 @@ class Product extends Model
         'order_shop',
     ];
 
+
+    // one user to many products
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    // one category many products
+    public function categories()
+    {
+        return $this->belongsTo(category::class);
+    }
+
+    // one brand many products
+    public function brands()
+    {
+        return $this->belongsTo(brand::class);
+    }
+
+    // relation with order_details table
+    public function orderDetail()
+    {
+        return $this->belongsTo(OrderDetail::class);
+    }
+
+
+    // Relation with ProductQuery table
+    public function productQueries()
+    {
+        return $this->hasMany(ProductQuery::class);
+    }
+
+    // Relation with Product table
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+
+    // Relation with ProductTax table
+    public function productTax()
+    {
+        return $this->hasOne(ProductTax::class);
+    }
+
+    // Relation with ProductTranslation table
+    public function productTranslations()
+    {
+        return $this->hasMany(ProductTranslation::class);
+    }
+
+    // Relation with reviews table
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
 }

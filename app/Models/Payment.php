@@ -17,4 +17,10 @@ class Payment extends Model
         'txn_code',
     ];
 
+
+    // one seller many payments
+    public function seller() {
+        return $this->belongsTo(Seller::class);
+    }
+
 }

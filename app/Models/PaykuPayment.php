@@ -26,4 +26,9 @@ class PaykuPayment extends Model
     ];
 
 
+    // one payku_payment one transaction
+    public function transactions() {
+        return $this->belongsTo(Transaction::class);
+    }
+
 }

@@ -23,4 +23,26 @@ class RefundRequest extends Model
         'reject_reason',
     ];
 
+
+    // one user many refundrequest
+    public function users() {
+        return $this->belongsTo(User::class);
+    }
+
+
+    // one order many refund_request
+    public function orders() {
+        return $this->belongsToMany(Order::class);
+    }
+
+    // one order_detail many refund_request
+    public function orderDetails() {
+        return $this->belongsToMany(OrderDetail::class);
+    }
+
+    // one seller many refund_request
+    public function sellers() {
+        return $this->belongsTo(Seller::class);
+    }
+
 }

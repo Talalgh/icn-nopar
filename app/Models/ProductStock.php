@@ -19,4 +19,10 @@ class ProductStock extends Model
         'image',
     ];
 
+
+    // one product many product_stock
+    public function products() {
+        return $this->belongsTo(Product::class);
+    }
+
 }

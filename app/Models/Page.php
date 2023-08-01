@@ -20,5 +20,11 @@ class Page extends Model
         'meta_image',
     ];
 
-    
+    // relation with page_translation table
+    public function pageTranslations()
+    {
+        return $this->hasMany(PageTranslation::class);
+    }
+
+
 }
