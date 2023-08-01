@@ -18,10 +18,9 @@ return new class extends Migration
             $table->string('status')->default(0);
             $table->string('affiliate_type');
             $table->integer('referred_by_user');
+            $table->integer('guest_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('guest_id')->nullable();
-            $table->foreign('guest_id')->references('id')->on('cities')->onDelete('cascade');
             $table->unsignedBigInteger('order_id')->nullable();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->unsignedBigInteger('order_detail_id')->nullable();
