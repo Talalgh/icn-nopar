@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('colors_translations', function (Blueprint $table) {
+        Schema::create('languages', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('lang');
-            $table->unsignedBigInteger('color_id');
-            $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
+            $table->string('name',100);
+            $table->string('code',100);
+            $table->string('app_lang_code',255)->default('en');
+            $table->integer('rtl')->default(0);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('colors_translations');
+        Schema::dropIfExists('languages');
     }
 };

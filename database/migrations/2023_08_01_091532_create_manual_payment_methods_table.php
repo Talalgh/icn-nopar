@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('colors_translations', function (Blueprint $table) {
+        Schema::create('manual_payment_methods', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('lang');
-            $table->unsignedBigInteger('color_id');
-            $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
+            $table->string('type',255)->nullable();
+            $table->string('heading',255)->nullable();
+            $table->text('description')->nullable();
+            $table->text('bank_info')->nullable();
+            $table->string('photo',255)->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('colors_translations');
+        Schema::dropIfExists('manual_payment_methods');
     }
 };

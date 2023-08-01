@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('colors_translations', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('lang');
-            $table->unsignedBigInteger('color_id');
-            $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
+            $table->string('code',2);
+            $table->string('code_3',50)->nullable();
+            $table->string('country_code',50)->nullable();
+            $table->string('name',100);
+            $table->integer('status')->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('colors_translations');
+        Schema::dropIfExists('countries');
     }
 };

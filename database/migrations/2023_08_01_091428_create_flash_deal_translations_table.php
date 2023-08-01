@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('colors_translations', function (Blueprint $table) {
+        Schema::create('flash_deal_translations', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('lang');
-            $table->unsignedBigInteger('color_id');
-            $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
+            $table->string('title',50);
+            $table->string('lang',100);
+            $table->unsignedBigInteger('flash_deal_id');
+            $table->foreign('flash_deal_id')->references('id')->on('flash_deals')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('colors_translations');
+        Schema::dropIfExists('flash_deal_translations');
     }
 };
