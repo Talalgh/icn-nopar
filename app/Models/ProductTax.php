@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class ProductTax extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'product_id',
+        'tax_id',
+        'tax',
+        'tax_type',
+    ];
+
 }

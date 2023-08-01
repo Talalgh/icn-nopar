@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class ProductQueries extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'customer_id',
+        'seller_id',
+        'product_id',
+        'question',
+        'reply',
+    ];
+
 }

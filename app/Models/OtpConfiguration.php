@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class OtpConfiguration extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'type',
+        'value'
+    ];
+
+
+
 }

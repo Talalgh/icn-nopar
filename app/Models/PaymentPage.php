@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class PaymentPage extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = [
+        'order_level',
+        'position',
+    ];
+
 }
