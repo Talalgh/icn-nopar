@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('opt_cconfigurations', function (Blueprint $table) {
+        Schema::create('opt_configurations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type', 200)->nullable();
             $table->string('value', 255)->nullable();
