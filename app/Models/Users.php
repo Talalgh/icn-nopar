@@ -81,4 +81,5 @@ class Users extends Model
     {
         return $this->hasMany(Wishlist::class, 'user_id');
     }
+
 }
